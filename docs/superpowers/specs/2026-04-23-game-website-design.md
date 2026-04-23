@@ -72,22 +72,22 @@ Game-joy/
 │   │   ├── style.css       # 游戏样式
 │   │   └── thumbnail.png   # 缩略图
 │   │
-│   ├── gomoku/             # 五子棋
-│   │   ├── index.html
-│   │   ├── game.js
-│   │   ├── ai.js           # AI 算法（独立文件）
-│   │   ├── style.css
-│   │   └── thumbnail.png
-│   │
 │   ├── 2048/               # 2048
 │   │   ├── index.html
 │   │   ├── game.js
 │   │   ├── style.css
 │   │   └── thumbnail.png
 │   │
-│   ├── snake/              # 贪吃蛇
+│   ├── dino/               # Google小恐龙
 │   │   ├── index.html
 │   │   ├── game.js
+│   │   ├── style.css
+│   │   └── thumbnail.png
+│   │
+│   ├── gomoku/             # 五子棋
+│   │   ├── index.html
+│   │   ├── game.js
+│   │   ├── ai.js           # AI 算法（独立文件）
 │   │   ├── style.css
 │   │   └── thumbnail.png
 │   │
@@ -98,8 +98,8 @@ Game-joy/
 │   │   └── thumbnail.png
 │   │
 │   └── pinball/            # 三维弹球
-│   │   ├── index.html
-│   │   ├── game.js
+│       ├── index.html
+│       │   ├── game.js
 │   │   ├── style.css
 │   │   └ thumbnail.png
 │
@@ -270,16 +270,6 @@ const Sound = {
       "instructions": "左键揭开格子，右键标记地雷，找出所有非地雷格子即可获胜。"
     },
     {
-      "id": "gomoku",
-      "name": "五子棋",
-      "path": "games/gomoku/index.html",
-      "thumbnail": "games/gomoku/thumbnail.png",
-      "tags": ["益智", "AI对战"],
-      "category": "puzzle",
-      "description": "五子棋人机对战，挑战 AI 对手。",
-      "instructions": "点击棋盘落子，先连成五子者获胜。"
-    },
-    {
       "id": "2048",
       "name": "2048",
       "path": "games/2048/index.html",
@@ -290,14 +280,24 @@ const Sound = {
       "instructions": "使用方向键滑动，相同数字合并，目标是达到 2048。"
     },
     {
-      "id": "snake",
-      "name": "贪吃蛇",
-      "path": "games/snake/index.html",
-      "thumbnail": "games/snake/thumbnail.png",
+      "id": "dino",
+      "name": "Google小恐龙",
+      "path": "games/dino/index.html",
+      "thumbnail": "games/dino/thumbnail.png",
       "tags": ["街机", "经典"],
       "category": "arcade",
-      "description": "经典贪吃蛇游戏。",
-      "instructions": "使用方向键控制蛇的移动，吃掉食物增长，不要撞墙或撞到自己。"
+      "description": "Chrome 浏览器离线小游戏。",
+      "instructions": "按空格键或点击屏幕跳跃，躲避障碍物，尽可能跑得更远。"
+    },
+    {
+      "id": "gomoku",
+      "name": "五子棋",
+      "path": "games/gomoku/index.html",
+      "thumbnail": "games/gomoku/thumbnail.png",
+      "tags": ["益智", "AI对战"],
+      "category": "puzzle",
+      "description": "五子棋人机对战，挑战 AI 对手。",
+      "instructions": "点击棋盘落子，先连成五子者获胜。"
     },
     {
       "id": "tetris",
@@ -359,6 +359,30 @@ const Sound = {
 
 ---
 
+### Google小恐龙 (Dino)
+
+**实现方式：** Canvas
+
+**核心逻辑：**
+- 恐龙自动向前跑
+- 按空格键跳跃躲避障碍物
+- 障碍物类型：仙人掌、翼龙
+- 速度逐渐加快
+- 碰撞检测
+
+**数据结构：**
+```javascript
+{
+  dino: {x, y, vy, isJumping},
+  obstacles: [{x, y, type, width, height}],
+  speed: 6,
+  score: 0,
+  gameOver: false
+}
+```
+
+---
+
 ### 五子棋 (Gomoku)
 
 **实现方式：** Canvas + JavaScript + AI
@@ -406,30 +430,6 @@ const SCORES = {
   score: 0,
   gameOver: false,
   isWin: false
-}
-```
-
----
-
-### 贪吃蛇 (Snake)
-
-**实现方式：** Canvas
-
-**核心逻辑：**
-- 网格地图
-- 蛇身数组存储
-- 方向键控制
-- 吃食物增长、加速
-- 撞墙或撞自己失败
-
-**数据结构：**
-```javascript
-{
-  snake: [{x, y}],    // 蛇身坐标数组
-  food: {x, y},       // 食物位置
-  direction: 'right', // 当前方向
-  score: 0,
-  gameOver: false
 }
 ```
 
@@ -541,9 +541,9 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica N
 | 游戏 | 文件 |
 |------|------|
 | 扫雷 | `games/minesweeper/index.html`, `game.js`, `style.css`, `thumbnail.png` |
-| 五子棋 | `games/gomoku/index.html`, `game.js`, `ai.js`, `style.css`, `thumbnail.png` |
 | 2048 | `games/2048/index.html`, `game.js`, `style.css`, `thumbnail.png` |
-| 贪吃蛇 | `games/snake/index.html`, `game.js`, `style.css`, `thumbnail.png` |
+| Google小恐龙 | `games/dino/index.html`, `game.js`, `style.css`, `thumbnail.png` |
+| 五子棋 | `games/gomoku/index.html`, `game.js`, `ai.js`, `style.css`, `thumbnail.png` |
 | 俄罗斯方块 | `games/tetris/index.html`, `game.js`, `style.css`, `thumbnail.png` |
 | 三维弹球 | `games/pinball/index.html`, `game.js`, `style.css`, `thumbnail.png` |
 
