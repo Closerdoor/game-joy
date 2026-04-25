@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扫雷 - Game-Joy</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/game.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-layout">
+    <header class="game-header">
+      <div class="game-header-left">
+        <a href="../../index.html" class="back-btn">← 返回</a>
+      </div>
+      <div class="game-header-center">💣 扫雷</div>
+      <div class="game-header-right">
+        <div class="high-score">最高分: <span class="high-score-value" id="high-score">0</span></div>
+      </div>
+    </header>
+
+    <div class="game-area">
+      <div class="game-container">
+        <div class="game-controls">
+          <select id="difficulty">
+            <option value="easy">简单 (9x9, 10雷)</option>
+            <option value="medium">中等 (16x16, 40雷)</option>
+            <option value="hard">困难 (30x16, 99雷)</option>
+          </select>
+          <button class="btn" id="new-game">新游戏</button>
+        </div>
+        <div class="game-stats">
+          <span id="mines-count">10</span> 雷
+          <span id="timer">0</span> 秒
+        </div>
+        <div id="board" class="board"></div>
+      </div>
+    </div>
+
+    <div class="game-info">
+      <div class="info-section">
+        <h3 class="info-section-title">游戏说明</h3>
+        <div class="info-section-content">
+          左键点击揭开格子，右键点击标记地雷。揭开所有非地雷格子即可获胜。
+          数字表示周围 8 个格子中的地雷数量。
+        </div>
+      </div>
+      <div class="info-section">
+        <h3 class="info-section-title">排行榜</h3>
+        <div id="leaderboard"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/common.js"></script>
+  <script src="game.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>
