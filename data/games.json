@@ -1,0 +1,76 @@
+{
+  "games": [
+    {
+      "id": "minesweeper",
+      "name": "扫雷",
+      "path": "games/minesweeper/index.html",
+      "thumbnail": "games/minesweeper/thumbnail.png",
+      "icon": "💣",
+      "tags": ["益智", "经典"],
+      "category": "puzzle",
+      "description": "经典扫雷游戏，考验你的逻辑推理能力。",
+      "instructions": "左键揭开格子，右键标记地雷，找出所有非地雷格子即可获胜。"
+    },
+    {
+      "id": "2048",
+      "name": "2048",
+      "path": "games/2048/index.html",
+      "thumbnail": "games/2048/thumbnail.png",
+      "icon": "🔢",
+      "tags": ["益智", "数字"],
+      "category": "puzzle",
+      "description": "经典数字合并游戏。",
+      "instructions": "使用方向键滑动，相同数字合并，目标是达到 2048。"
+    },
+    {
+      "id": "dino",
+      "name": "Google小恐龙",
+      "path": "games/dino/index.html",
+      "thumbnail": "games/dino/thumbnail.png",
+      "icon": "🦖",
+      "tags": ["街机", "经典"],
+      "category": "arcade",
+      "description": "Chrome 浏览器离线小游戏。",
+      "instructions": "按空格键或点击屏幕跳跃，躲避障碍物，尽可能跑得更远。"
+    },
+    {
+      "id": "gomoku",
+      "name": "五子棋",
+      "path": "games/gomoku/index.html",
+      "thumbnail": "games/gomoku/thumbnail.png",
+      "icon": "⚫",
+      "tags": ["益智", "AI对战"],
+      "category": "puzzle",
+      "description": "五子棋人机对战，挑战 AI 对手。",
+      "instructions": "点击棋盘落子，先连成五子者获胜。"
+    },
+    {
+      "id": "tetris",
+      "name": "俄罗斯方块",
+      "path": "games/tetris/index.html",
+      "thumbnail": "games/tetris/thumbnail.png",
+      "icon": "🧱",
+      "tags": ["街机", "经典"],
+      "category": "arcade",
+      "description": "经典俄罗斯方块游戏。",
+      "instructions": "使用方向键移动和旋转方块，填满一行消除得分。"
+    },
+    {
+      "id": "pinball",
+      "name": "三维弹球",
+      "path": "games/pinball/index.html",
+      "thumbnail": "games/pinball/thumbnail.png",
+      "icon": "🎱",
+      "tags": ["街机", "弹球"],
+      "category": "arcade",
+      "description": "经典三维弹球游戏。",
+      "instructions": "使用左右键控制挡板，保持球不落地，击中目标得分。"
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "全部" },
+    { "id": "puzzle", "name": "益智" },
+    { "id": "arcade", "name": "街机" },
+    { "id": "reaction", "name": "反应" }
+  ]
+}

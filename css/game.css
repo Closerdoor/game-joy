@@ -1,0 +1,139 @@
+.game-layout {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--sidebar-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.game-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  font-size: 20px;
+  transition: var(--transition);
+}
+
+.menu-btn:hover {
+  background-color: var(--border-color);
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.back-btn:hover {
+  background-color: var(--border-color);
+}
+
+.game-header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.game-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.high-score {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.high-score-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.game-container {
+  background-color: var(--sidebar-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.game-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.info-section {
+  background-color: var(--sidebar-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.info-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-section-content {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-rank {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.leaderboard-score {
+  font-weight: 600;
+}
+
+.leaderboard-date {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
