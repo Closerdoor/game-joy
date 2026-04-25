@@ -91,4 +91,6 @@ function isGameOver(grid) {
   return !canMove(grid);
 }
 
-export { initGrid, addRandomTile, move, canMove, isGameOver };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initGrid, addRandomTile, move, canMove, isGameOver };
+}

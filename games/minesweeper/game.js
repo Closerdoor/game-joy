@@ -91,4 +91,6 @@ function checkWin(board, mines) {
   return revealedCount === rows * cols - mines;
 }
 
-export { initBoard, placeMines, countAdjacentMines, reveal, checkWin };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initBoard, placeMines, countAdjacentMines, reveal, checkWin };
+}

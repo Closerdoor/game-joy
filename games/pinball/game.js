@@ -175,4 +175,6 @@ class Game {
   }
 }
 
-export { Ball, Paddle, Brick, Game };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { Ball, Paddle, Brick, Game };
+}

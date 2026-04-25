@@ -144,4 +144,6 @@ function findBestMove(board, player) {
   return bestMove;
 }
 
-export { initBoard, placeStone, checkWin, evaluatePosition, findBestMove };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { initBoard, placeStone, checkWin, evaluatePosition, findBestMove };
+}

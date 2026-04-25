@@ -117,4 +117,6 @@ function clearLines(board) {
   return linesCleared;
 }
 
-export { createBoard, createPiece, rotatePiece, isValidPosition, placePiece, clearLines, PIECES };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { createBoard, createPiece, rotatePiece, isValidPosition, placePiece, clearLines, PIECES };
+}

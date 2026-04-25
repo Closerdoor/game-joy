@@ -125,4 +125,6 @@ class Game {
   }
 }
 
-export { Dino, Obstacle, Game };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { Dino, Obstacle, Game };
+}

@@ -82,4 +82,6 @@ const Sound = {
   }
 };
 
-export { Storage, Sound };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { Storage, Sound };
+}
