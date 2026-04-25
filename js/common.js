@@ -43,4 +43,43 @@ const Storage = {
   }
 };
 
-export { Storage };
+const Sound = {
+  sounds: {},
+  enabled: false,
+
+  init() {
+    this.enabled = Storage.getSettings().soundEnabled;
+    if (typeof Audio !== 'undefined') {
+      this.sounds = {
+        click: new Audio('assets/sounds/click.mp3'),
+        win: new Audio('assets/sounds/win.mp3'),
+        lose: new Audio('assets/sounds/lose.mp3'),
+        move: new Audio('assets/sounds/move.mp3')
+      };
+      Object.values(this.sounds).forEach(audio => {
+        audio.volume = 0.3;
+      });
+    }
+  },
+
+  isEnabled() {
+    return this.enabled;
+  },
+
+  toggle() {
+    this.enabled = !this.enabled;
+    Storage.setSettings({ soundEnabled: this.enabled });
+    return this.enabled;
+  },
+
+  play(name) {
+    if (!this.enabled || !this.sounds[name]) return;
+    this.sounds[name].currentTime = 0;
+    const result = this.sounds[name].play();
+    if (result && result.catch) {
+      result.catch(() => {});
+    }
+  }
+};
+
+export { Storage, Sound };
