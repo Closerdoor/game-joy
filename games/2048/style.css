@@ -1,0 +1,87 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  background-color: #BBADA0;
+  padding: 10px;
+  border-radius: var(--radius);
+  margin-top: 16px;
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: transform 0.1s ease;
+}
+
+.tile-0 { background-color: #CDC1B4; color: #776E65; }
+.tile-2 { background-color: #EEE4DA; color: #776E65; }
+.tile-4 { background-color: #EDE0C8; color: #776E65; }
+.tile-8 { background-color: #F2B179; color: #F9F6F2; }
+.tile-16 { background-color: #F59563; color: #F9F6F2; }
+.tile-32 { background-color: #F67C5F; color: #F9F6F2; }
+.tile-64 { background-color: #F65E3B; color: #F9F6F2; }
+.tile-128 { background-color: #EDCF72; color: #F9F6F2; font-size: 28px; }
+.tile-256 { background-color: #EDCC61; color: #F9F6F2; font-size: 28px; }
+.tile-512 { background-color: #EDC850; color: #F9F6F2; font-size: 28px; }
+.tile-1024 { background-color: #EDC53F; color: #F9F6F2; font-size: 24px; }
+.tile-2048 { background-color: #EDC22E; color: #F9F6F2; font-size: 24px; }
+.tile-super { background-color: #3C3A32; color: #F9F6F2; font-size: 20px; }
+
+.score-display {
+  display: flex;
+  gap: 16px;
+}
+
+.score-box {
+  background-color: #BBADA0;
+  padding: 8px 24px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 12px;
+  color: #EEE4DA;
+}
+
+.score-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.game-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px 48px;
+  background-color: rgba(238, 228, 218, 0.95);
+  border-radius: var(--radius);
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 1000;
+  text-align: center;
+}
+
+.game-message.win {
+  color: #EDC22E;
+}
+
+.game-message.lose {
+  color: #776E65;
+}
