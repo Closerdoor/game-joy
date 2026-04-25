@@ -1,0 +1,13 @@
+{
+  "name": "game-joy",
+  "version": "1.0.0",
+  "description": "免费在线小游戏网站",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
